@@ -32,6 +32,7 @@ jobs:
 
       with:
         image: lokeshmanifest/crud-api-latest
+        push: true
         registry: docker.io
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
