@@ -28,7 +28,7 @@ jobs:
       run: ./myapp
 
     - name: Build and push Docker images
-      uses: docker/build-push-action@v5.1.0
+      uses: docker/build-push-action@v5
 
       with:
         image: lokeshmanifest/crud-api-latest
