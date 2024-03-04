@@ -53,5 +53,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         env: 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: LOKESHMANIFEST_go-crud
+          SONAR_ORGANIZATION: lokesh-prasad
               
 
