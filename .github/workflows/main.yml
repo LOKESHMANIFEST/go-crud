@@ -54,9 +54,6 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          
-          SONAR_PROJECT_KEY: LOKESHMANIFEST_go-crud
-          SONAR_ORGANIZATION: lokesh-prasad
         with:
           args: -X
 
