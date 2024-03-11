@@ -21,6 +21,14 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
+    - name: Cache Docker image layers
+      uses: actions/cache@v2
+      with:
+        path: /var/lib/docker/image
+        key: ${{ runner.os }}-image-${{ hashFiles('**/Dockerfile') }}
+        restore-keys: |
+          ${{ runner.os }}-image-
+
     - name: Build
       run: go build -o myapp main.go
 
