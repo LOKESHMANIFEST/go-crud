@@ -42,20 +42,15 @@ jobs:
         push: true
         tags: lokeshmanifest/crud-api-latest:latest
 
-  sonarcloud:
-    name: SonarCloud
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: -X
+    - name: Scan image
+      uses: anchore/scan-action@v3
+      with:
+        image: lokeshmanifest/crud-api-latest:latest
+    
+    - name: Scan current project
+      uses: anchore/scan-action@v3
+      with:
+        path: "."
 
               
 
