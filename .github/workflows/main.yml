@@ -16,7 +16,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: '1.21.6'
+        go-version: '1.22.1'
 
     - name: Check out code
       uses: actions/checkout@v2
@@ -41,16 +41,13 @@ jobs:
       with:
         push: true
         tags: lokeshmanifest/crud-api-latest:latest
-
+    
     - name: Scan image
       uses: anchore/scan-action@v3
       with:
-        image: lokeshmanifest/crud-api-latest:latest
+        image: docker.io/lokeshmanifest/crud-api-latest:latest  # Specify the correct image name for scanning
     
     - name: Scan current project
       uses: anchore/scan-action@v3
       with:
         path: "."
-
-              
-
