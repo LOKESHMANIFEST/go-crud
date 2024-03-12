@@ -50,10 +50,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # - name: Scan image
-    #   uses: anchore/scan-action@v3
-    #   with:
-    #     image: docker.io/lokeshmanifest/crud-api-latest:latest
+    
+    - name: Scan image
+      if: always()
+      uses: anchore/scan-action@v3
+      with:
+        image: docker.io/lokeshmanifest/crud-api-latest:latest
 
     - name: Scan current project
       uses: anchore/scan-action@v3
