@@ -45,4 +45,9 @@ jobs:
       with:
         push: true
         tags: lokeshmanifest/crud-api-latest:latest
+
+    
+    - name: ZAP Scan
+      uses: zaproxy/action-full-scan@v0.9.0
+      
         
